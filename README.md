@@ -5,10 +5,8 @@
 ### Setup and run instuctions
 
 1) Download or clone this repository.
-
-2) Download, install, then open [Docker desktop](https://www.docker.com/products/docker-desktop).
-
-3) Move or copy the directory containing the FASTA files you wish to analyze into the `sliding-window-analysis` directory
+   
+2) Move or copy the directory containing the FASTA files you wish to analyze into the `sliding-window-analysis` directory, in a sub-directory named 'aligns'.
 
 4) Open a command line interface and change your working directory to the sliding-window-analysis directory, for example
 
@@ -18,40 +16,24 @@
 
     docker-compose build --build-arg path_to_data=sliding-window-analysis/example/path/ -->
 
-5) To excute the program, use `docker-compose run` at the command line
 
-        docker-compose run sliding_window path_to_data target window_size n_largest --stride --colors
+This version of the code works with the following python and python package versions:
+python 3.11.8
+pandas 2.0.3
+numpy 1.24.3
+scipy 1.11.1
+bokeh 3.2.1
 
-The program parameters are `path_to_data`, `target`, `window_size`, `n_largest`, and optionally, `--stride` and `--colors`.
+Other versions might work, but haven't been fully tested. 
 
-For documentation on the program's parameters, run
-
-    docker-compose run sliding_window -h
-
-<!-- The path_to_data argument should be the same as the one provided in the docker-compose build command.  -->
-
-### Examples
-
-##### With a single `target` "G" and no optional arguments
-
-    docker-compose run sliding_window data/raw/ G 20 50
-
-After running this command, the program's output should now be in the generated "results" subdirectory
-
-##### With multiple targets ("T", "C", and "A") and the optional `--stride` and `--colors` arguments
-
-    docker-compose run sliding_window data/raw/ TCA 10 20 --stride 10 --colors blue green yellow
-
-### Installing and running the program without Docker
-
-If you wish to run the program without docker, you must have python 3.9 or later installed (earlier versions may work, but have not been tested), then follow steps 1-4 as above. Next, install the program's requirements with
-
-    pip install -r requirements.txt
-
-Then run the program with
+Run the program, from within your sliding-window-analysis directory, as follows:
 
     python3 run.py path_to_data target window_size n_largest --stride --colors
 
-For example,
+For example, to look for asparagine enrichments in a 20-residue sliding window with a 5-residue stride:
 
-    python3 run.py data/raw/extremofiles N 20 50 --stride 5
+    python3 run.py aligns/ N 20 50 --stride 5
+
+Or, to look for aspartate and glutamate enrichments in 9-residue sliding widow with a default stride (1):
+
+    python3 run.py aligns/ DE 9 50
