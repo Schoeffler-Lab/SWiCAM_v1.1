@@ -32,6 +32,8 @@ Or, to look for aspartate and glutamate enrichments in 9-residue sliding widow w
     python3 run.py aligns/ DE 9 50
 
 5) The program will output raw and collated data to folders called
+   
     results/window_frequencies
     results/plots
+   
    Within this folder, there will be csv files containing raw window frequnecies for every secuence in the alignment
