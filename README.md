@@ -15,17 +15,13 @@ Other versions might work, but haven't been fully tested.
    
 2) Move or copy the directory containing the FASTA files you wish to analyze into the `SWiCAM_v1.1-main` directory, in a sub-directory named 'aligns'.
 
-4) Open a command line interface and change your working directory to the sliding-window-analysis directory, for example
+3) Open a command line interface and change your working directory to the sliding-window-analysis directory, for example
 
         cd example/path/to/directory/SWiCAM_v1.1-main
 
+Run the program, from within your SWiCAM directory, as follows:
 
-
-
-
-Run the program, from within your sliding-window-analysis directory, as follows:
-
-    python3 run.py path_to_data target window_size n_largest --stride --colors
+    python3 run.py path_to_data target window_size n_largest --stride
 
 For example, to look for asparagine enrichments in a 20-residue sliding window with a 5-residue stride:
 
