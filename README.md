@@ -19,7 +19,7 @@ Other versions might work, but haven't been fully tested.
 
         cd example/path/to/directory/SWiCAM_v1.1-main
 
-Run the program, from within your SWiCAM directory, as follows:
+4) Run the program, from within your SWiCAM directory, as follows:
 
     python3 run.py path_to_data target window_size n_largest --stride
 
@@ -30,3 +30,8 @@ For example, to look for asparagine enrichments in a 20-residue sliding window w
 Or, to look for aspartate and glutamate enrichments in 9-residue sliding widow with a default stride (1):
 
     python3 run.py aligns/ DE 9 50
+
+5) The program will output raw and collated data to folders called
+    results/window_frequencies
+    results/plots
+   Within this folder, there will be csv files containing raw window frequnecies for every secuence in the alignment
