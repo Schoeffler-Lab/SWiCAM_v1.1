@@ -36,4 +36,4 @@ Or, to look for aspartate and glutamate enrichments in 9-residue sliding widow w
     results/window_frequencies
     results/plots
    
-   Within this folder, there will be csv files containing raw window frequnecies for every secuence in the alignment
+   Within this folder, there will be csv files containing raw window frequencies for every sequence in the alignment
