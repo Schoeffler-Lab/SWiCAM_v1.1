@@ -32,8 +32,11 @@ Or, to look for aspartate and glutamate enrichments in 9-residue sliding widow w
     python3 run.py aligns/ DE 9 50
 
 5) The program will output raw and collated data to folders called
+
+      results/plots
+
+      results/processed_data
    
-    results/window_frequencies
-    results/plots
-   
-   Within this folder, there will be csv files containing raw window frequencies for every sequence in the alignment
+   Within this folder, there will be csv files containing raw window frequencies for every sequence in the alignment.
+   There will also be a folder containing interactive plots of the average frequencies and the delta average frequencies.
+   If you would like to make a publication-quality plot of the delta average frequencies, please see our SWiLoDD Delta Plot Visualizer script on GitHub.
